@@ -10,7 +10,7 @@ export default defineConfig({
     vue(),
     vueDevTools(),
   ],
-  base: '/money-tracker-ts/',
+  base: '/budget-book-ts/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
