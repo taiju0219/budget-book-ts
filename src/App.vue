@@ -3,7 +3,10 @@ import { ref, computed } from "vue";
 import type { BudgetLog } from "./types";
 import MoneyInput from "./components/MoneyInput.vue";
 import MoneyList from "./components/MoneyList.vue";
-const items = ref<BudgetLog[]>([])
+const items = ref<BudgetLog[]>([
+  { id: 1, name: 'お年玉', amount: 5000, type: 'income' },
+  { id: 2, name: 'マンガ', amount: 500, type: 'expense' }
+])
 const handleAdd = (newItem: BudgetLog) => {
   items.value.push(newItem)
 }
