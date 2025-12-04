@@ -15,7 +15,7 @@ const handleDelete = (id: number) => {
 }
 const totalAmount = computed(() => {
   return items.value.reduce((sum, item) => {
-    return sum + (item.type === 'income' ? item.amount :-item.amount)
+    return sum + (item.type === 'income' ? item.amount : -item.amount)
   }, 0)
 })
 </script>
