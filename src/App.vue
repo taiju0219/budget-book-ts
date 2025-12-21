@@ -32,6 +32,15 @@ const totalAmount = computed(() => {
 </template>
 
 <style scoped>
-.container { max-width: 500px; margin: 0 auto; padding: 20px; font-family: sans-serif; }
-.balance { text-align: right; font-size: 24px; margin-bottom: 20px; }
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: sans-serif;
+}
+.balance {
+  text-align: right;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
 </style>

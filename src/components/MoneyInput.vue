@@ -10,14 +10,18 @@ const form = reactive({
   amount: null as number | null,
   type: 'expense' as 'income' | 'expense'
 })
+const onInputAmount = () => {
+  error.value = ''
+  if (form.amount) {
+    if (!Number.isInteger(form.amount) || form.amount <= 0) {
+      error.value = '1以上の整数を入力してください'
+    } 
+  }
+}
 const onAdd = () => {
   error.value = ''
   if (!form.name || !form.amount) {
     error.value = '項目と金額を入力してください'
-    return
-  }
-  if (!Number.isInteger(form.amount) || form.amount <= 0) {
-    error.value = '1以上の整数を入力してください'
     return
   }
   
@@ -38,13 +42,16 @@ const onAdd = () => {
     <div class = "form-group">
       <input type = "text"
         v-model = "form.name"
-        placeholder = "項目名">
+        placeholder = "項目名"
+      >
       <input
         type = "number"
         v-model = "form.amount"
         placeholder = "金額"
         min = "1"
-        step = "1">
+        step = "1"
+        @input = "onInputAmount"
+      >
     </div>
     <div class = "radio-group">
       <label><input type = "radio" value = "income" v-model = "form.type">収入</label>
